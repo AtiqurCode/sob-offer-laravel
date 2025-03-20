@@ -1,8 +1,7 @@
 <?php
 $media = $offer->getFirstMedia('featured_image');
 
-$imageUrl = $media
-    ? $media->getUrl() : asset('/images/default-image.jpg'); // Optional fallback image
+$imageUrl = $media ? $media->getUrl() : asset('/images/default-image.jpg'); // Optional fallback image
 ?>
 @extends('layouts.app')
 
@@ -13,13 +12,18 @@ $imageUrl = $media
             <img class="rounded-lg w-[900px] h-auto" src="{{ $imageUrl }}" alt="{{ $offer->title }}" loading="lazy">
         </div>
         <div class="px-6 py-4">
-            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{ $offer->title }}</h1>
-            <p class="mt-2 text-gray-600 dark:text-gray-100">{!! $offer->description !!}</p>
-        </div>
-        <div class="px-6 py-4">
+            <div class="text-center pb-4">
+                <p class="mt-2 text-gray-600 dark:text-gray-100">
+                    Date: {{ \Carbon\Carbon::parse($offer->offer_start_date)->format('jS M') }} - {{ \Carbon\Carbon::parse($offer->end_date)->format('jS M, Y') }}
+                </p>
+            </div>
             <div class="text-center">
                 <span id="countdown-{{ $offer->id }}" class="text-lg font-semibold bg-red-400 text-gray-100 px-4 py-2 rounded dark:bg-red-400 dark:text-gray-100"></span>
             </div>
+        </div>
+        <div class="px-6 py-4">
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{ $offer->title }}</h1>
+            <p class="mt-2 text-gray-600 dark:text-gray-100">{!! $offer->description !!}</p>
         </div>
         <div class="px-6 py-4">
             <span class="bg-blue-300 text-blue-800 text-sm font-semibold px-2.5 py-0.5 rounded dark:bg-blue-400 dark:text-blue-800">

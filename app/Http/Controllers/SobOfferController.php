@@ -30,6 +30,7 @@ class SobOfferController extends Controller
             'tags' => 'nullable|string',
         ]);
 
+
         $offer = SobOffer::create($validatedData);
 
         if ($request->hasFile('featured_image')) {
@@ -38,7 +39,7 @@ class SobOfferController extends Controller
         }
 
         if ($request->tags) {
-            $offer->attachTags(['tags']);
+            $offer->syncTags(array_map('trim', explode(',', $request->tags)));
         }
 
         return redirect()->route('sob-offers.index')->with('message', 'Offer created successfully.');
