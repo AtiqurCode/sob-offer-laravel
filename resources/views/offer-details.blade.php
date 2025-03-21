@@ -6,7 +6,7 @@ $imageUrl = $media ? $media->getUrl() : asset('/images/default-image.jpg'); // O
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto p-4 mt-14">
+<div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 mt-14">
     <div class="bg-white border rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
         <div class="p-4 flex justify-center">
             <img class="rounded-lg w-[900px] h-auto" src="{{ $imageUrl }}" alt="{{ $offer->title }}" loading="lazy">

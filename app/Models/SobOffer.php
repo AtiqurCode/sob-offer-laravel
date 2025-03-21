@@ -45,8 +45,8 @@ class SobOffer extends Model implements HasMedia
             ->singleFile()
             ->registerMediaConversions(function () {
                 $this->addMediaConversion('thumb')
-                    ->fit(fit: Fit::FillMax, desiredWidth:  497,  desiredHeight: 290, backgroundColor: '#ffffff')
-                // ->background('ffffff') // Set background to white
+                    ->fit(fit: Fit::FillMax, desiredWidth:  400,  desiredHeight: 400, backgroundColor: '#FF5733')
+                    ->format('jpg')
                     ->nonQueued(); // Ensures conversion happens immediately
             });
     }

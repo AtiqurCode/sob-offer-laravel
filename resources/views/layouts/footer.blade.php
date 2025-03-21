@@ -1,9 +1,10 @@
 <footer class="bg-gray-100 dark:bg-gray-900 py-6">
     <div class="text-center container mx-auto px-4">
-        <a href="{{ url("/") }}" class="flex items-center justify-center mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
+        <a href="{{ url("/") }}" class="flex items-center justify-center mb-1 text-2xl font-semibold text-gray-900 dark:text-white">
             <img class="h-12 w-auto" src="{{ asset('images/sob-offer-logo.png') }}" alt="Logo">
             {{-- SobOffer --}}
         </a>
+        <p class="text-sm text-gray-400 dark:text-gray-600 mb-2">Find the best offers for your searching product.</p>
 
         <p class="text-sm text-gray-500 dark:text-gray-400">© 2025-2025 SobOffer™. All Rights Reserved.</p>
 

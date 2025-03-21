@@ -41,7 +41,7 @@
 
         <div class="mx-auto max-w-xs">
             <label for="example1" class="mb-1 block text-sm font-medium text-gray-700">Upload file</label>
-            <input id="example1" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-blue-600 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-blue-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
+            <input id="example1" name="featured_image" type="file" class="mt-2 block w-full text-sm file:mr-4 file:rounded-md file:border-0 file:bg-blue-600 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-blue-700 focus:outline-none disabled:pointer-events-none disabled:opacity-60" />
         </div>
 
         <input type="text" name="tags" class="w-full bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white p-2 rounded" placeholder="Tags (comma-separated)">

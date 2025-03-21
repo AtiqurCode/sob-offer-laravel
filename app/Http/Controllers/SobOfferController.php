@@ -26,7 +26,7 @@ class SobOfferController extends Controller
             'category_id' => 'required|exists:categories,id',
             'terms_conditions' => 'nullable|string',
             'special_note' => 'nullable|string',
-            'featured_image' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'featured_image' => 'nullable|image|mimes:jpg,png,jpeg,webp|max:2048',
             'tags' => 'nullable|string',
         ]);
 
