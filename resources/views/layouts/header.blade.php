@@ -4,7 +4,7 @@
             <div class="flex justify-between h-16 items-center">
                 <!-- Logo -->
                 <a href="{{ url('/') }}" class="flex items-center">
-                    <img class="h-8 w-auto" src="https://tailwindflex.com/images/logo.svg" alt="Logo">
+                    <img class="h-12 w-auto ml-5" src="{{ asset('images/sob-offer-logo.png') }}" alt="Logo">
                     <span class="ml-2 text-xl font-bold text-gray-800 dark:text-gray-200">SobOffer</span>
                 </a>
 

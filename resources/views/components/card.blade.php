@@ -1,17 +1,7 @@
-<?php
-$media = $offer->getFirstMedia('featured_image');
-
-$imageUrl = $media
-    ? ($media->hasGeneratedConversion('thumb')
-        ? $media->getUrl('thumb')
-        : $media->getUrl())
-    : asset('/images/default-image.jpg'); // Optional fallback image
-?>
-
 <div class="bg-white border rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
     <div class="p-2 flex justify-center">
         <a href="{{ $offer['link'] }}">
-            <img class="rounded-lg" src="{{ $imageUrl }}" alt="{{ $offer['alt'] }}" loading="lazy">
+            <img class="rounded-lg" src="{{ $offer->featured_image_url }}" alt="{{ $offer['alt'] }}" loading="lazy">
         </a>
     </div>
     <div class="px-4 pb-3">
@@ -30,8 +20,9 @@ $imageUrl = $media
         <div class="flex items-center mt-1 mb-1">
             <p class="text-gray-600 dark:text-gray-300 hover:text-violet-800">
 
-                <span id="countdown-{{ $offer['id'] }}"
-                    class="bg-red-400 text-gray-100 text-2xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-400 dark:text-gray-100 ml-3"></span>
+                <span
+                    {{-- id="countdown-{{ $offer['id'] }}" --}}
+                    class="bg-red-200 text-gray-800 text-2xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-gray-800 ml-3">End: {{ \Carbon\Carbon::parse($offer->end_date)->format('jS M, Y') }}</span>
                 <span
                     class="bg-blue-100 text-blue-800 text-2xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-1">
                     {{ $offer->category->name }}
@@ -65,7 +56,7 @@ $imageUrl = $media
     </div> --}}
 </div>
 
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function () {
         const endDate = new Date("{{ $offer['end_date'] }}").getTime();
         const countdownElement = document.getElementById('countdown-{{ $offer['id'] }}');
@@ -89,4 +80,4 @@ $imageUrl = $media
 
         setInterval(updateCountdown, 1000);
     });
-</script>
+</script> --}}

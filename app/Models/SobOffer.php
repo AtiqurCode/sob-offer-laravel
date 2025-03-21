@@ -9,6 +9,9 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Support\Str;
 use Spatie\Tags\HasTags;
+use Spatie\Image\Enums\Fit;
+// use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class SobOffer extends Model implements HasMedia
 {
@@ -42,10 +45,18 @@ class SobOffer extends Model implements HasMedia
             ->singleFile()
             ->registerMediaConversions(function () {
                 $this->addMediaConversion('thumb')
-                    ->width(400)
-                    ->height(400)
+                    ->fit(fit: Fit::FillMax, desiredWidth:  497,  desiredHeight: 290, backgroundColor: '#ffffff')
+                // ->background('ffffff') // Set background to white
                     ->nonQueued(); // Ensures conversion happens immediately
             });
+    }
+
+
+
+    public function featuredImage()
+    {
+        return $this->morphOne(Media::class, 'media', 'model_type', 'model_id')
+            ->where('collection_name', 'featured_image');
     }
 
     public function getCountdownAttribute()

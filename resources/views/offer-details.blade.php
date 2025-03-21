@@ -23,7 +23,7 @@ $imageUrl = $media ? $media->getUrl() : asset('/images/default-image.jpg'); // O
         </div>
         <div class="px-6 py-4">
             <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{{ $offer->title }}</h1>
-            <p class="mt-2 text-gray-600 dark:text-gray-100">{!! $offer->description !!}</p>
+            <p class="mt-2 text-gray-900 dark:text-white">{!! $offer->description !!}</p>
         </div>
         <div class="px-6 py-4">
             <span class="bg-blue-300 text-blue-800 text-sm font-semibold px-2.5 py-0.5 rounded dark:bg-blue-400 dark:text-blue-800">

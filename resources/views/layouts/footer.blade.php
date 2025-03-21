@@ -1,8 +1,8 @@
 <footer class="bg-gray-100 dark:bg-gray-900 py-6 mt-5">
     <div class="text-center container mx-auto px-4">
-        <a href="#" class="flex items-center justify-center mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
-            <img src="https://www.svgrepo.com/show/499962/music.svg" class="h-10 w-10 mr-3" alt="Sob Offer Logo">
-            SobOffer
+        <a href="{{ url("/") }}" class="flex items-center justify-center mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
+            <img class="h-12 w-auto" src="{{ asset('images/sob-offer-logo.png') }}" alt="Logo">
+            {{-- SobOffer --}}
         </a>
 
         <p class="text-sm text-gray-500 dark:text-gray-400">© 2025-2025 SobOffer™. All Rights Reserved.</p>
