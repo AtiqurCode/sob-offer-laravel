@@ -1,4 +1,4 @@
-<footer class="bg-gray-100 dark:bg-gray-900 py-6 mt-5">
+<footer class="bg-gray-100 dark:bg-gray-900 py-6">
     <div class="text-center container mx-auto px-4">
         <a href="{{ url("/") }}" class="flex items-center justify-center mb-4 text-2xl font-semibold text-gray-900 dark:text-white">
             <img class="h-12 w-auto" src="{{ asset('images/sob-offer-logo.png') }}" alt="Logo">
@@ -7,7 +7,7 @@
 
         <p class="text-sm text-gray-500 dark:text-gray-400">© 2025-2025 SobOffer™. All Rights Reserved.</p>
 
-        <ul class="flex justify-center mt-4 space-x-6">
+        {{-- <ul class="flex justify-center mt-4 space-x-6">
             <li>
                 <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -22,6 +22,6 @@
                     </svg>
                 </a>
             </li>
-        </ul>
+        </ul> --}}
     </div>
 </footer>

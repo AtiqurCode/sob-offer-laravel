@@ -1,5 +1,5 @@
-<header>
-    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-10">
+{{-- <header> --}}
+    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <!-- Logo -->
@@ -10,8 +10,12 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex md:space-x-8">
-                    <a href="#" class="border-indigo-500 text-gray-900 dark:text-gray-200 px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
-                    <a href="#" class="border-transparent text-gray-500 dark:text-gray-400 hover:border-gray-300 hover:text-gray-700 dark:hover:text-gray-300 px-1 pt-1 border-b-2 text-sm font-medium">Privacy</a>
+                    <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'border-indigo-500 text-gray-900 dark:text-gray-200' : 'border-transparent text-gray-500 dark:text-gray-400 hover:border-gray-300 hover:text-gray-700 dark:hover:text-gray-300' }} px-1 pt-1 border-b-2 text-sm font-medium">
+                        Home
+                    </a>
+                    <a href="{{ route('privacy.policy') }}" class="{{ request()->routeIs('privacy.policy') ? 'border-indigo-500 text-gray-900 dark:text-gray-200' : 'border-transparent text-gray-500 dark:text-gray-400 hover:border-gray-300 hover:text-gray-700 dark:hover:text-gray-300' }} px-1 pt-1 border-b-2 text-sm font-medium">
+                        Privacy
+                    </a>
                 </div>
 
                 <!-- Search & Mobile Menu Button -->
@@ -66,7 +70,7 @@
             </div>
         </div>
     </nav>
-</header>
+{{-- </header> --}}
 
 <script>
     // Simple toggle for mobile menu
